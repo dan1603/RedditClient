@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="post"
+            type="com.kalashnyk.denys.redditapp.repository.database.entity.RedditPostEntity"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/indentation_8">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/reddit_image_size"
+            android:layout_height="@dimen/reddit_image_size"
+            android:src="@drawable/ic_reddit_dark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indentation_8"
+                android:textColor="@color/colorTrueBlack"
+                android:textSize="30sp"
+                tools:text="Title of the sample post"
+                android:text="@{post.title}" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/indentation_8"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/reddit_image_up_size"
+                    android:layout_height="@dimen/reddit_image_up_size"
+                    android:src="@drawable/ic_arrow_upward" />
+
+                <TextView
+                    android:id="@+id/score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTrueBlack"
+                    android:textSize="@dimen/txt_info_size"
+                    tools:text="56"
+                    android:text="@{post.score}" />
+
+                <ImageView
+                    android:layout_width="@dimen/reddit_image_up_size"
+                    android:layout_height="@dimen/reddit_image_up_size"
+                    android:layout_marginStart="@dimen/indentation_8"
+                    android:src="@drawable/ic_comment" />
+
+                <TextView
+                    android:id="@+id/comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTrueBlack"
+                    android:textSize="@dimen/txt_info_size"
+                    tools:text="86"
+                    android:text="@{post.num_comments}" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indentation_8">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/post_submitted" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/indentation_8"
+                    tools:text="15/04/1998"
+                    android:text="@{post.getFormattedDate()}" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/indentation_8"
+                    android:text="@string/post_by" />
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/indentation_8"
+                    tools:text="ShiftHackZ"
+                    android:text="@{post.author}" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

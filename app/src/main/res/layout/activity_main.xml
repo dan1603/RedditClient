@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/llMainActivityRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSubreddit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indentation_8"
+            android:layout_marginTop="@dimen/indentation_8"
+            android:layout_marginEnd="@dimen/indentation_8"
+            android:focusedByDefault="false"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/tvSubreddit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_hint"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:text="@string/default_subreddit"
+                tools:text="androiddev" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPostsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusedByDefault="true"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</layout>
